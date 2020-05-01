@@ -201,7 +201,7 @@ foreach ($teamData in $dataSet){
         if ($teamData.Owners.count -gt 0){
             #Create Team
             $teamMailNickName = $teamData.TeamName -replace " ", "-"
-            $newTeam = New-Team -DisplayName $teamData.TeamName -MailNickName $teamMailNickName -Description $teamData.TeamName -Visibility "Private" -Owner $teamData.Owners[0]  -whatif
+            $newTeam = New-Team -DisplayName $teamData.TeamName -MailNickName $teamMailNickName -Description $teamData.TeamName -Visibility "Private" -Owner $teamData.Owners[0]
 
             if ($null -eq $newTeam){
                 log -Message ("[ERROR]Failed to create team " + $teamData.TeamName + ". Please consult with Information Services")
